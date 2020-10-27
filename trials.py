@@ -8,7 +8,14 @@ def output_all_items(items):
 
 
 def get_all_evens(nums):
-    pass  # TODO: replace this line with your code
+    """"Given an array of numbers, return an array of all even numbers.""""
+
+    nums = []
+
+    for num in nums:
+        if num % 2 == 0:
+            nums.append(num)
+    return nums
 
 
 def get_odd_indices(items):
