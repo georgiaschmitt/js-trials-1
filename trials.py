@@ -31,18 +31,24 @@ def get_odd_indices(items):
 
 
 def print_as_numbered_list(items):
-
+    """Given an array, output a numbered list."""
     i = 1
 
     for item in items:
-        print (f"{i}.{items}")
+        print (f"{i}.{item}")
         i+=1
     
 
-
 def get_range(start, stop):
-    pass  # TODO: replace this line with your code
-
+    """Return an array of numbers in a certain range."""
+    nums = []
+    
+    num = start
+    while num < stop:
+        nums.append(num)
+        num += 1
+    return nums
+        
 
 def censor_vowels(word):
     pass  # TODO: replace this line with your code
