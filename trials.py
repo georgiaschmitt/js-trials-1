@@ -8,7 +8,7 @@ def output_all_items(items):
 
 
 def get_all_evens(nums):
-    """"Given an array of numbers, return an array of all even numbers.""""
+    """Given an array of numbers, return an array of all even numbers."""
 
     nums = []
 
@@ -19,7 +19,15 @@ def get_all_evens(nums):
 
 
 def get_odd_indices(items):
-    pass  # TODO: replace this line with your code
+    """Given an array, return all elements at odd numbered indices."""
+    
+    result = []
+
+    for i in range(len(items)):
+        if i % 2 != 0:
+            result.append(i)
+    return result
+
 
 
 def print_as_numbered_list(items):
