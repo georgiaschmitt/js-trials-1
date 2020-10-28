@@ -25,7 +25,7 @@ def get_odd_indices(items):
 
     for i in range(len(items)):
         if i % 2 != 0:
-            result.append(i)
+            result.append(items[i)
     return result
 
 
@@ -35,7 +35,7 @@ def print_as_numbered_list(items):
     i = 1
 
     for item in items:
-        print (f"{i}.{item}")
+        print(f"{i}. {item}")
         i+=1
     
 
@@ -43,32 +43,67 @@ def get_range(start, stop):
     """Return an array of numbers in a certain range."""
     nums = []
     
-    num = start
-    while num < stop:
+    for num in range(start,stop):
         nums.append(num)
-        num += 1
     return nums
         
 
 def censor_vowels(word):
-    pass  # TODO: replace this line with your code
+    """Given a string, return a string where vowels are replaced with '*'."""
+    chars = []
+    for letter in word:
+        if letter in ['a', 'e', 'i', 'o', 'u']:
+            chars.append('*')
+        else:
+            chars.append(letter)
+    return ''.join(chars)
 
 
 def snake_to_camel(string):
-    pass  # TODO: replace this line with your code
+    camelCase = []
 
+    for word in string.split("_"):
+        camelCase.append(f"{word[0].upper()}{word[1:]}")
+    return "".join(camelCase)
 
 def longest_word_length(words):
-    pass  # TODO: replace this line with your code
-
+    longest = len(words[0])
+    for word in words:
+        if longest < len(word):
+            longest = len(word)
+    return longest
 
 def truncate(string):
-    pass  # TODO: replace this line with your code
-
+    result = []
+    for char in string:
+        if len(result) == 0 or char != result[-1]:
+            result.append(char)
+    return "".join(result)
 
 def has_balanced_parens(string):
-    pass  # TODO: replace this line with your code
-
+    parens = 0
+    for char in string:
+        if char == "(":
+            parens += 1
+        elif char == ")":
+            parens -= 1
+    
+    return parens == 0
 
 def compress(string):
-    pass  # TODO: replace this line with your code
+    compressed = []
+    curr_char = ''
+    char_count = 0
+    for char in string:
+        if char != curr_char:
+            compressed.append(curr_char)
+
+            if char_count > 1:
+                compressed.append(str(char_count))
+            curr_char = char
+            char_count = 0
+        char_count += 1
+    compressed.append(curr_char)
+    if char_count > 1:
+        compressed.append(str(char_count))
+    return "".join(compressed)
